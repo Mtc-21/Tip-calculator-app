@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-   
+   :root {
+      --strong-cyan: hsl(172, 67%, 45%);
+      --very-dark-cyan: hsl(183, 100%, 15%);
+      --dark-grayish-cyan: hsl(186, 14%, 43%);
+      --dark-grayis-cyan: hsl(184, 14%, 56%);
+      --light-grayish-cyan: hsl(185, 41%, 84%);
+      --light-grayis-cyan: hsl(189, 41%, 97%);
+      --white: hsl(0, 0%, 100%);
+    }
     * {
       margin: 0;
       padding: 0;
       border: 0;
-      outline: 0;
       vertical-align: baseline;
       box-sizing: border-box;
       font-size: 100%;
@@ -21,15 +28,7 @@
     html {
       min-height: 100vh;
     }
-:root {
-      --strong-cyan: hsl(172, 67%, 45%);
-      --very-dark-cyan: hsl(183, 100%, 15%);
-      --dark-grayish-cyan: hsl(186, 14%, 43%);
-      --dark-grayis-cyan: hsl(184, 14%, 56%);
-      --light-grayish-cyan: hsl(185, 41%, 84%);
-      --light-grayis-cyan: hsl(189, 41%, 97%);
-      --white: hsl(0, 0%, 100%);
-    }
+
     body {
       display: grid;
       grid-template-rows: 0.5fr 2fr 50px;
@@ -177,7 +176,9 @@
     .general:hover {
       border: solid 1px var(--strong-cyan, hsl(172, 67%, 45%));
     }
-
+    input:focus{
+      outline-color:var(--strong-cyan, hsl(172, 67%, 45%));
+    }
     .select {
       color: var(--very-dark-cyan, hsl(183, 100%, 15%));
       background: var(--strong-cyan, hsl(172, 67%, 45%));

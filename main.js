@@ -11,6 +11,7 @@ const bill = document.querySelector("#bill");
       elem.classList.add("alert");
       elem.previousElementSibling.previousElementSibling.textContent = msg;
       elem.previousElementSibling.previousElementSibling.style.visibility = "visible";
+      elem.style.outline=0;
     }
     const hideAlert = (elem) => {
       reset.classList.add("resetHover", "select");
@@ -57,6 +58,7 @@ const bill = document.querySelector("#bill");
         valuePorcentage = 0;
         if (valuePeople <= 0) {
           showAlert(people, alerts[1]);
+          
         }
         result(valuePorcentage)
       }
@@ -72,6 +74,7 @@ const bill = document.querySelector("#bill");
         } else {
           if (valuePeople <= 0) {
             showAlert(people, alerts[1])
+            people.focus();
           }
         }
       });
