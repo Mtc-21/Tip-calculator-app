@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="resets.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+
+<body>
+  <header class="header"></header>
+  <main class="content">
+    <form>
+      <p class="alertOne" role="alert" aria-live="assertive" aria-relevant="text">Can't be zero</p>
+      <label for="bill" class="bill">Bill</label>
+      <input type="number" id="bill" class="general" value="" min="1" placeholder="0" required aria-required="true">
+      <p class="selectTip">Select Tip %</p>
+      <input type="button" id="five" value="5%" class="tip button">
+      <input type="button" id="ten" value="10%" class="tip button">
+      <input type="button" id="fifteen" value="15%" class="tip button">
+      <input type="button" id="tw-five" value="25%" class="tip button">
+      <input type="button" id="fifty" value="50%" class="tip button">
+      <input type="number" id="custom" class="general" value="" placeholder="Custom" min="1" max="100">
+      <p class="alertTwo" role="alert" aria-live="assertive" aria-relevant="text">Can't be zero</p>
+      <label for="people" class="people">Number of People</label>
+      <input type="number" id="people" class="general" value="" min="1" max="100" placeholder="0">
+      <div class="result">
+        <label for="tipAmount" class="tipAmount">Tip Amount
+          <small>/ person</small></label>
+        <input type="text" id="tipAmount" value="" disabled aria-disabled="true">
+        <label for="total" class="total">Total
+          <small>/ person</small></label>
+        <input type="text" id="total" value="" disabled aria-disabled="true">
+        <input type="reset" id="reset" value="Reset" class="reset">
+      </div>
+    </form>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Martha Mendoza</a>.
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

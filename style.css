@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+   :root {
+      --strong-cyan: hsl(172, 67%, 45%);
+      --very-dark-cyan: hsl(183, 100%, 15%);
+      --dark-grayish-cyan: hsl(186, 14%, 43%);
+      --dark-grayis-cyan: hsl(184, 14%, 56%);
+      --light-grayish-cyan: hsl(185, 41%, 84%);
+      --light-grayis-cyan: hsl(189, 41%, 97%);
+      --white: hsl(0, 0%, 100%);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+      box-sizing: border-box;
+      font-size: 100%;
+      font: inherit;
+      outline-color: var(--strong-cyan, hsl(172, 67%, 45%));
+    }
+
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+
+
+    body,
+    html {
+      min-height: 100vh;
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: 0.5fr 2fr 50px;
+      font-family: 'Space Mono', monospace;
+      background: var(--light-grayish-cyan, hsl(185, 41%, 84%));
+    }
+
+
+    .header {
+      background-image: url("images/logo.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .content {
+      align-self: center;
+      justify-self: center;
+      max-width: 30rem;
+    }
+
+    form {
+      background: var(--white, hsl(0, 0%, 100%));
+      padding: 2rem;
+      gap: 0.8rem;
+      font-weight: 500;
+    }
+
+    form,
+    .result {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(auto-fit, 1fr);
+    }
+
+    .result {
+      gap: 1rem;
+    }
+
+    form,
+    .result {
+      padding: 2rem 1rem;
+      border-radius: 1rem;
+    }
+
+    #bill,
+    .selectTip,
+    #people,
+    .reset,
+    .result {
+      grid-column: 1/3;
+    }
+
+    .bill {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    .people {
+      grid-column: 1/2;
+      grid-row: 7/8;
+    }
+
+    .reset,
+    #people,
+    #bill,
+    input[type="button"],
+    #custom {
+      padding: 0.5rem;
+      border-radius: 0.3rem;
+    }
+
+    #tipAmount,
+    #total {
+      padding: 0.5rem;
+    }
+
+    #bill,
+    #people {
+      margin-bottom: 1rem;
+    }
+
+    .people,
+    .alertTwo {
+      margin-top: 1rem;
+    }
+
+    input {
+      font-size: 1.5rem;
+    }
+
+    .result input[type="text"] {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .result,
+    .button {
+      background: var(--very-dark-cyan, hsl(183, 100%, 15%));
+      color: var(--white);
+    }
+
+    .result input[type="text"] {
+      background: transparent;
+      color: var(--strong-cyan, hsl(172, 67%, 45%));
+    }
+
+    .result input[type="text"],
+    #custom,
+    #bill,
+    #people {
+      text-align: right;
+    }
+
+    .reset {
+      background: var(--dark-grayish-cyan, hsl(186, 14%, 43%));
+      text-transform: uppercase;
+    }
+
+    .alertTwo,
+    .alertOne {
+      text-align: right;
+      color: red;
+      visibility: hidden;
+    }
+
+    #bill,
+    #people,
+    #custom {
+      background: var(--light-grayis-cyan, hsl(189, 41%, 97%));
+    }
+
+    .reset,
+    form,
+    input[type="button"]:hover,
+    input[type="number"],
+    .resetHover:hover {
+      color: var(--very-dark-cyan, hsl(183, 100%, 15%));
+    }
+
+    input[type="button"]:hover,
+    .resetHover:hover {
+      background: var(--light-grayish-cyan, hsl(185, 41%, 84%));
+    }
+
+    .general:hover {
+      border: solid 1px var(--strong-cyan, hsl(172, 67%, 45%));
+    }
+
+    .select {
+      color: var(--very-dark-cyan, hsl(183, 100%, 15%));
+      background: var(--strong-cyan, hsl(172, 67%, 45%));
+    }
+
+    .alert,
+    .alert:hover {
+      border: solid 1px red;
+    }
+
+    .reset,
+    #people,
+    #bill,
+    input[type="button"],
+    #custom {
+      cursor: pointer;
+    }
+
+    form>*,
+    .result>* {
+      width: 100%;
+    }
+
+    .result label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .result small {
+      margin-top: 0.5rem;
+      color: var(--dark-grayis-cyan, hsl(184, 14%, 56%));
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+
+    .content {
+      animation: load 2s ease;
+    }
+
+    #bill,
+    #people {
+      background-repeat: no-repeat;
+      background-position: center left 1rem;
+    }
+
+    #bill {
+      background-image: url("images/icon-dollar.svg");
+    }
+
+    #people {
+      background-image: url("images/icon-person.svg");
+    }
+
+    @keyframes load {
+      0% {
+        opacity: 0.1;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @media(min-width:1000px) {
+      .content {
+        max-width: 60rem;
+      }
+
+      .header {
+        background-position: center bottom;
+      }
+
+      form {
+        grid-template-columns: repeat(3, 0.66fr) 1fr 1fr;
+        grid-template-rows: repeat(auto-fit, 1fr);
+        padding: 2rem 4rem 2rem 3rem;
+      }
+
+      .result {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto-fit, 1fr);
+        align-items: center;
+        padding: 2rem;
+        margin-left: 1.5rem;
+      }
+
+      .result input[type="text"] {
+        font-size: 2.5rem;
+      }
+
+      #bill,
+      .selectTip,
+      #people,
+      .reset,
+      .result {
+        grid-column: auto
+      }
+
+      .bill {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .people {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .result {
+        grid-column: 4/6;
+        grid-row: 1/8;
+      }
+
+      #people,
+      #bill {
+        grid-column: 1/4;
+      }
+
+      .alertOne,
+      .alertTwo,
+      #fifteen,
+      #custom {
+        grid-column: 3/4;
+      }
+
+      .selectTip,
+      #five,
+      #tw-five {
+        grid-column: 1/2;
+      }
+
+      .bill,
+      .people {
+        grid-column: 1/3;
+      }
+
+      .alertOne {
+        grid-row: 1/2;
+      }
+
+      .alertTwo {
+        grid-row: 6/7;
+      }
+
+      .tipAmount,
+      .total {
+        grid-column: 1/2;
+      }
+
+      .tipAmount {
+        grid-row: 1/2;
+      }
+
+      .total {
+        grid-row: 2/3;
+      }
+
+      .reset {
+        grid-column: 1/3;
+        align-self: flex-end;
+      }
+    }
