@@ -11,7 +11,7 @@ const bill = document.querySelector("#bill");
       elem.classList.add("alert");
       elem.previousElementSibling.previousElementSibling.textContent = msg;
       elem.previousElementSibling.previousElementSibling.style.visibility = "visible";
-      elem.style.outline=0;
+      elem.style.outline="0";
     }
     const hideAlert = (elem) => {
       reset.classList.add("resetHover", "select");
@@ -23,19 +23,10 @@ const bill = document.querySelector("#bill");
       if (!elem.value.startsWith("0") && parseFloat(elem.value) > 0) {
         hideAlert(elem);
         elem.id == "bill" ? valueBill = parseFloat(elem.value) : valuePeople = parseInt(elem.value);
+        valuePeople>valueBill?showAlert(people,alerts[2]):hideAlert(people);
       } else {
         showAlert(elem, alerts[1]);
-        removeSelect();
-        valuePorcentage = 0;
         elem.id == "bill" ? valueBill = 0 : valuePeople = 0;
-      }
-      valuePeople > valueBill ? showAlert(people, alerts[2]) : hideAlert(people);
-
-      if (valuePeople > 0 && valuePorcentage > 0) {
-        valuePeople > valueBill ? showAlert(people, alerts[2]) : hideAlert(people);
-      } else {
-        custom.value = "";
-        custom.classList.remove("alert");
       }
       elem.id == "bill" ? result(valueBill) : result(valuePeople);
     }
@@ -52,13 +43,14 @@ const bill = document.querySelector("#bill");
       if (!custom.value.startsWith("0") && custom.value > 0 && custom.value <= 100 && valuePeople < valueBill && valuePeople > 0) {
         removeSelect()
         custom.classList.remove("alert");
-        result(valuePorcentage)
+        result(valuePorcentage);
       } else {
         custom.classList.add("alert");
+        custom.style.outline="0";
         valuePorcentage = 0;
         if (valuePeople <= 0) {
           showAlert(people, alerts[1]);
-          
+          people.focus();
         }
         result(valuePorcentage)
       }
@@ -66,21 +58,19 @@ const bill = document.querySelector("#bill");
     for (let i = 0; i < porcentage.length; i++) {
       porcentage[i].addEventListener("click", () => {
         custom.value = "";
-        if (valueBill > 0 && valuePeople > 0) {
+        if (valueBill > 0 ) {
           removeSelect();
           porcentage[i].classList.add("select");
           valuePorcentage = parseInt(porcentage[i].value);
-          result(valuePorcentage);
-        } else {
-          if (valuePeople <= 0) {
+           if (valuePeople <= 0) {
             showAlert(people, alerts[1])
             people.focus();
           }
-        }
+          result(valuePorcentage);
+        } 
       });
     }
     const result = () => {
-      console.log(valueBill, valuePorcentage, valuePeople)
       if (!valuePeople || valuePeople > valueBill) {
         tipAmount.value = "$0.00"
         totalPerson.value = "$" + parseFloat(valueBill).toFixed(2);
@@ -123,6 +113,9 @@ const bill = document.querySelector("#bill");
       } else {
         hideAlert(people)
         validate(people);
+      }
+      if(people.value<=0){
+        showAlert(people, alerts[1])
       }
     });
     people.addEventListener("click", () => {
