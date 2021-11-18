@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <header class="header"></header>
+  <img src="images/logo.svg" alt="Splitter">
   <main class="content">
     <form>
       <p class="alertOne" role="alert" aria-live="assertive" aria-relevant="text">Can't be zero</p>
@@ -23,7 +23,7 @@
       <input type="button" id="fifteen" value="15%" class="tip button">
       <input type="button" id="tw-five" value="25%" class="tip button">
       <input type="button" id="fifty" value="50%" class="tip button">
-      <input type="number" id="custom" class="general" value="" aria-labelledby="custom" placeholder="Custom" min="1"
+      <input type="number" id="custom" class="general" value="" aria-labelledby="custom" placeholder="Custom" min="0"
         max="100">
       <p class="alertTwo" role="alert" aria-live="assertive" aria-relevant="text">Can't be zero</p>
       <label for="people" class="people">Number of People</label>
@@ -31,10 +31,10 @@
       <div class="result">
         <label for="tipAmount" class="tipAmount">Tip Amount
           <small>/ person</small></label>
-        <input type="text" id="tipAmount" value="" disabled aria-disabled="true">
+        <input type="text" id="tipAmount" value="" disabled>
         <label for="total" class="total">Total
           <small>/ person</small></label>
-        <input type="text" id="total" value="" disabled aria-disabled="true">
+        <input type="text" id="total" value="" disabled>
         <input type="reset" id="reset" value="Reset" class="reset">
       </div>
     </form>
